@@ -2,8 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const eventsContainer = document.getElementById('events-container');
 
     fetch('https://private-amnesiac-f3c71-tixrapi.apiary-proxy.com/v1/groups/1861/events?cpk=k4DuEdE0um63tQM93r70')
-        .then(response => response.json())
+        .then(response => {
+            console.log('Response Status:', response.status);
+            return response.json();
+        })
         .then(data => {
+            console.log('API Response Data:', data);
+
             if (data.events && data.events.length > 0) {
                 data.events.forEach(event => {
                     const eventElement = document.createElement('div');
