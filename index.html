@@ -52,7 +52,20 @@
         }
 
     </style>
+
 </head>
+
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        window.parent.postMessage(height, '*');
+    }
+
+    window.onload = sendHeight;
+    window.onresize = sendHeight;
+</script>
+
+
 <body>
     <div id="events-container"></div>
 
