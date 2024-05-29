@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>Events</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Helvetica;
+        }
+
+        #events-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1%;
+            padding: 5%;
+        }
+
+        .event {
+            border-radius: 10px;
+            text-align: left;
+        }
+        .event h2 {
+            margin: 2% 0 0 0;
+            color: white;
+            font-size: 4vw;
+        }
+
+        .event p {
+            padding: 0px;
+            margin: 0%;
+            color: rgb(182, 182, 182);
+            font-size: 2.5vw;
+            margin: 0px 0 0 1px;
+        }
+        .event img {
+            border-radius: 5px;
+            object-fit:contain;
+        }
+
+    </style>
+</head>
+
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        window.parent.postMessage(width, '*');
+    }
+
+    window.onload = sendHeight;
+    window.onresize = sendHeight;
+</script>
+
+
+<body>
+    <script src="mscript.js"></script>
+    <div id="events-container"></div>
+</body>
+</html>
