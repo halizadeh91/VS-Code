@@ -53,7 +53,7 @@
         }
   
         var TimeOffSet = 80; //Lower the time faster the speed
-        var logpress = 3; // example: TimeOffSet / 3 => increase th speed 3 time from initial value
+        var logpress = 6; // example: TimeOffSet / 3 => increase th speed 3 time from initial value
         var ArrowClickSlide = 2; // Arrow click Event time for slider animation
   
         //Arrow variable declaration
@@ -149,13 +149,7 @@
           });
         }
   
-        function stop() {
-          var stop = TweenMax.to(LandingWrapper, TimeOffSet, {
-            scrollTo: {
-              x: "+=0"
-            }
-          });
-        }
+
         // ===================
         //   Function Call Event
         // ===================
@@ -178,14 +172,8 @@
           Leftarrow.on("mouseover mouseup ", function (e) {
             left();
           });
-          Leftarrow.on("mouseout ", function (e) {
-            stop();
-          });
           Rightarrow.on("mouseover mouseup ", function (e) {
             right();
-          });
-          Rightarrow.on("mouseout ", function (e) {
-            stop();
           });
         }
         LandingWrapper.scroll(function () {
