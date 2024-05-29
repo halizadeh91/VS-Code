@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (Array.isArray(data) && data.length > 0) {
                 eventsContainer.innerHTML = '';
-                data.forEach(event => {
+                const upcomingEvents = data.slice(0, 8); // Get the first 8 events
+                upcomingEvents.forEach(event => {
                     const eventElement = document.createElement('div');
                     eventElement.className = 'event';
 
