@@ -90,8 +90,8 @@
 
 $(document).ready(function () {
     $("#slider1").slider({
-        NoItemLg: 3,
-        NoItemSm: 3,
+        NoItemLg: 5,
+        NoItemSm: 4,
         SlidtoScroll: false,
         ItemtoSlide: 2
     });
