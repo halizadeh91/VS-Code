@@ -1,9 +1,7 @@
 * {
   box-sizing: content-box;
 }
-html {
-  /* allows body tag to take full height */
-}
+
 .slider-main {
   position: relative;
 }
@@ -61,8 +59,6 @@ html {
   }
 }
 .arrow-left {
-  opacity: 0;
-  display: none;
   float: left;
   z-index: 999;
   left: 20px;
