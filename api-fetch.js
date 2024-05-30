@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     eventElement.innerHTML = `
                         <a href="${event.url}" target="_blank" style="text-decoration: none;">
-                            <img src="${event.flyer_url}" alt="${event.name} Flyer" style="width:10vw; Height:18vw; object-fit:cover; border-radius:5px;">
+                            <img src="${event.mobile_image_url}" alt="${event.name} Flyer" style="width:100%; Height:18vw; object-fit:cover; border-radius:5px;">
                             <h2>${event.name}</h2>
                             <p>${eventDateString}</p>
                         </a>
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Initialize the carousel after adding the items
                 $('#slider1').slider({
-                    NoItemLg: 4,
-                    NoItemSm: 4,
+                    NoItemLg: 3,
+                    NoItemSm: 3,
                     SlidtoScroll: false,
                     ItemtoSlide: 2
                 });
