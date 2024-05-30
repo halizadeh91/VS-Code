@@ -16,6 +16,8 @@
         Finddiv.wrapAll("<div class='slider-main'><div class='landing-wrapper'><div class='landing-inner-content'></div></div></div>");
         $(this).find(".slider-main").append("<div class='arrow-main'><span class='arrow arrow-left'><i class='fas fa-chevron-left'></i></span><span class='arrow arrow-right'><i class='fas fa-chevron-right'></i></span></div>");
 
+        var autoScrollTimeline;
+
         function Refresh(Settings, Target) {
             var LandingWrapper = Target.find(".landing-wrapper");
             var LandingInnerContent = Target.find(".landing-inner-content");
@@ -40,11 +42,13 @@
                 }
             }
 
-            function autoScroll() {
+            function startAutoScroll() {
+                if (autoScrollTimeline) {
+                    autoScrollTimeline.kill();
+                }
                 var loopTime = 10 * TotalItems;
-
-                var tl = new TimelineMax({ repeat: -1, ease: Linear.easeNone });
-                tl.to(LandingWrapper, loopTime, {
+                autoScrollTimeline = new TimelineMax({ repeat: -1, ease: Linear.easeNone });
+                autoScrollTimeline.to(LandingWrapper, loopTime, {
                     scrollTo: { x: "+=" + (Itemwidth * TotalItems) },
                     onComplete: function () {
                         LandingWrapper.scrollLeft(Itemwidth * TotalItems);
@@ -62,14 +66,19 @@
                         } else if (direction === 'left' && LandingWrapper.scrollLeft() <= 0) {
                             LandingWrapper.scrollLeft(Itemwidth * TotalItems);
                         }
+                        startAutoScroll();
                     }
                 });
             }
 
-            Target.find(".arrow-left").on("click", function () { slide('left'); });
-            Target.find(".arrow-right").on("click", function () { slide('right'); });
+            Target.find(".arrow-left").on("click", function () {
+                slide('left');
+            });
+            Target.find(".arrow-right").on("click", function () {
+                slide('right');
+            });
 
-            autoScroll();
+            startAutoScroll();
         }
 
         Refresh(Settings, TargetName);
