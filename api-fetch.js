@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     eventElement.innerHTML = `
                         <a href="${event.url}" target="_blank" style="text-decoration: none;">
-                            <img src="${event.flyer_url}" alt="${event.name} Flyer" style="width:100%; Height:50vh; object-fit:cover; border-radius:5px;">
+                            <img src="${event.flyer_url}" alt="${event.name} Flyer" style="border-radius:5px;">
                             <h2>${event.name}</h2>
                             <p>${eventDateString}</p>
                         </a>

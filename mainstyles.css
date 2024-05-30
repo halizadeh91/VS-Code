@@ -4,11 +4,13 @@
 
 .slider-main {
   position: relative;
+  padding: 20px 0;
 }
 
 .items {
   float: left;
   overflow: hidden;
+  height: 30vw;
 }
 
 .arrow {
@@ -95,9 +97,6 @@ body {
   color: #fff;
 }
 
-.slider-main {
-  padding: 20px 0;
-}
 
 p {
   text-align: center;
@@ -160,4 +159,11 @@ p {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+}
+
+
+img {
+  width:100%;
+  Height:25vw;
+  object-fit:cover; 
 }

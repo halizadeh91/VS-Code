@@ -81,10 +81,18 @@
             startAutoScroll();
         }
 
-        Refresh(Settings, TargetName);
-        $(window).on("resize orientationchange", function () {
+        function initialize() {
             Refresh(Settings, TargetName);
-        });
+            $(window).on("resize orientationchange", function () {
+                clearTimeout($.data(this, 'resizeTimer'));
+                $.data(this, 'resizeTimer', setTimeout(function () {
+                    // Re-initialize the slider on resize or orientation change
+                    Refresh(Settings, TargetName);
+                }, 250));
+            });
+        }
+
+        initialize();
     };
 })(jQuery);
 
