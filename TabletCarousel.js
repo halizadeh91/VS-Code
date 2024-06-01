@@ -25,6 +25,7 @@
             var Itemwidth = LandingWrapper.width() / NumberOfItem;
             var Slides = Target.find(".items").css("width", Itemwidth);
             var TotalItems = Slides.length;
+            LandingInnerContent.empty(); // Clear previous clones
             var clonesBefore = Slides.clone().addClass('clone');
             var clonesAfter = Slides.clone().addClass('clone');
             LandingInnerContent.prepend(clonesBefore).append(clonesAfter).css("width", Itemwidth * (TotalItems * 6));
@@ -34,11 +35,11 @@
                 var windowWidth = $(window).width();
                 if (windowWidth >= 768 && windowWidth <= 1024) {
                     return 3; // Show 3 items for tablet screen sizes
-                } else if (Settings.NoItemLg && windowWidth > 1024) {
+                } else if (windowWidth > 1024) {
                     return Settings.NoItemLg;
-                } else if (Settings.NoItemMd && windowWidth > 450 && windowWidth <= 1024) {
+                } else if (windowWidth > 450 && windowWidth <= 1024) {
                     return Settings.NoItemMd;
-                } else if (Settings.NoItemSm && windowWidth <= 450) {
+                } else if (windowWidth <= 450) {
                     return Settings.NoItemSm;
                 } else {
                     return 1;
@@ -74,10 +75,10 @@
                 });
             }
 
-            Target.find(".arrow-left").on("click", function () {
+            Target.find(".arrow-left").off("click").on("click", function () {
                 slide('left');
             });
-            Target.find(".arrow-right").on("click", function () {
+            Target.find(".arrow-right").off("click").on("click", function () {
                 slide('right');
             });
 
@@ -102,8 +103,8 @@
 $(document).ready(function () {
     $("#slider1").slider({
         NoItemLg: 5,
-        NoItemMd: 3, // This can be kept as a fallback if you want a different number for medium screens other than tablets
-        NoItemSm: 4,
+        NoItemMd: 4,
+        NoItemSm: 2,
         SlidtoScroll: false,
         ItemtoSlide: 2
     });
