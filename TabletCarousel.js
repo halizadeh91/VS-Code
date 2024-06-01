@@ -32,17 +32,8 @@
             LandingWrapper.scrollLeft(Itemwidth * TotalItems);
 
             function getNumberOfItems(Settings) {
-                var windowWidth = $(window).width();
-                if (windowWidth >= 768 && windowWidth <= 1024) {
-                    return 3; // Show 3 items for tablet screen sizes
-                } else if (windowWidth > 1024) {
-                    return Settings.NoItemLg;
-                } else if (windowWidth > 450 && windowWidth <= 1024) {
-                    return Settings.NoItemMd;
-                } else if (windowWidth <= 450) {
-                    return Settings.NoItemSm;
-                } else {
-                    return 1;
+               {
+                    return 3;
                 }
             }
 
