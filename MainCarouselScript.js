@@ -34,9 +34,9 @@
                 if (Settings.NoItemLg && $(window).width() > 1024) {
                     return Settings.NoItemLg;
                 } else if (Settings.NoItemMd && $(window).width() > 450 && $(window).width() <= 1024) {
-                    return Settings.NoItemMd;
+                    return 3;
                 } else if (Settings.NoItemSm && $(window).width() <= 450) {
-                    return Settings.NoItemSm;
+                    return 3;
                 } else {
                     return 3;
                 }
