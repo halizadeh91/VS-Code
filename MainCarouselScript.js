@@ -38,7 +38,7 @@
                 } else if (Settings.NoItemSm && $(window).width() <= 450) {
                     return Settings.NoItemSm;
                 } else {
-                    return 1;
+                    return 3;
                 }
             }
 
