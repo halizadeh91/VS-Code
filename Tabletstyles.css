@@ -1,0 +1,167 @@
+* {
+  box-sizing: content-box;
+}
+
+.slider-main {
+  position: relative;
+  padding: 20px 0;
+}
+
+.items {
+  float: left;
+  overflow: hidden;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  color: #000;
+  align-items: center;
+  font-size: 13px;
+  box-shadow: 11px 4px 22px -15px #000;
+  position: relative;
+}
+
+.arrow-main {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  z-index: 99;
+}
+
+.arrow:hover:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: -4px;
+  top: -4px;
+  border-radius: 50%;
+  filter: blur(30px);
+  height: calc(100% + 8px);
+  width: calc(100% + 8px);
+  opacity: 1;
+  transition: all 0.2s;
+  background: linear-gradient(-45deg, #96fd90, #bd0d51, #b4ff8f, #f9cece);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.5;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.arrow-left {
+  float: left;
+  z-index: 999;
+  left: -4%;
+
+}
+
+.arrow-right {
+  float: right;
+  z-index: 999;
+  right: -4%;
+}
+
+.show-left-arrow,
+.show-right-arrow {
+  display: flex;
+}
+
+
+body {
+  margin: 0 5%;
+  padding: 0;
+  overflow-x: hidden;
+  background: black;
+  color: #fff;
+}
+
+
+p {
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial, san-serif;
+  text-transform: uppercase;
+}
+
+.landing-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow: auto;
+  cursor: pointer;
+}
+
+.landing-wrapper {
+  position: relative;
+}
+
+.landing-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.landing-wrapper {
+  scrollbar-width: none;
+}
+
+.landing-inner-content {
+  background: #fff;
+}
+
+
+.event h2 {
+  color: white;
+  font-size: 1.4vw;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.event p {
+  color: rgb(146, 146, 146);
+  font-size: .9vw;
+  margin: 0;
+}
+
+#slider1 {
+  font-family: Helvetica;
+}
+
+
+#events-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1%;
+  padding: 20px;
+}
+
+.event {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+img {
+  width:100%;
+  Height:50vw;
+  object-fit:cover; 
+}
